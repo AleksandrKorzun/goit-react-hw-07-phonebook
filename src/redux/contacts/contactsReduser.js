@@ -19,7 +19,6 @@ const isLoader = createReducer(false, {
   [deleteItemActionCreatorRequest]: () => true,
   [deleteItemActionCreatorSuccess]: () => true,
   [deleteItemActionCreatorError]: () => true,
-
 })
 const error = createReducer(null, {
   [addItemsActionCreatorError]: (_, action) => action.payload,
@@ -29,13 +28,11 @@ const error = createReducer(null, {
 const filterReducer = createReducer("", {
     [setFilterActionCreator]: (_, action) => action.payload,
   });
-
-  const contactsReduser = combineReducers({
-    items: itemsReducer,
-    isLoading: isLoader,
-    error,
-    filter: filterReducer,
-  });
-
-  export default contactsReduser;
+const contactsReduser = combineReducers({
+  items: itemsReducer,
+  isLoading: isLoader,
+  error,
+  filter: filterReducer,
+});
+export default contactsReduser;
 
