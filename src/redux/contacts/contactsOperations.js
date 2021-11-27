@@ -23,7 +23,7 @@ export const addContactOperation = (contact) => async (dispatch, getState) => {
 export const deleteContactOperation = (id) => async (dispatch, getState) => {
     dispatch(deleteItemActionCreatorRequest())
     try {
-        const data = await deleteContactsApi(id)
+        await deleteContactsApi(id)
         dispatch(deleteItemActionCreatorSuccess(id))
     } catch (error) {
         dispatch(deleteItemActionCreatorError())

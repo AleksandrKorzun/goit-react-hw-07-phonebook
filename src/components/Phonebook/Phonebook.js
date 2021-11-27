@@ -1,10 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import PhonebookInput from './PhoneBookInput/PhonebookInput';
 import { useDispatch, useSelector } from "react-redux";
-import {addItemsActionCreator} from '../../redux/contacts/contactsActions'
-import { getContacts, setContactsApi } from '../../services/api-contacts';
 import { getItemsSelector } from '../../redux/contacts/contactsSelectors';
-import { addContactOperation, getContactsOperation, setContactOperation } from '../../redux/contacts/contactsOperations';
+import { addContactOperation, getContactsOperation} from '../../redux/contacts/contactsOperations';
 
 const Phonebook = () => {
     const dispatch = useDispatch()
@@ -14,7 +12,7 @@ const Phonebook = () => {
     });
     useEffect(() => {
         dispatch(getContactsOperation())
-    }, [])
+    }, [dispatch])
     const items = useSelector(getItemsSelector)
     const onChangeInpuntName = (e) => {
         const {name, value} = e.target
@@ -22,7 +20,6 @@ const Phonebook = () => {
     }
     const onSubmitContacts = (e) => {
         e.preventDefault();
-        // getContacts()
         const checkContacts = items.some((item)=>{
             return item.name.trim().toLocaleLowerCase() === name.trim().toLocaleLowerCase()
         }) 

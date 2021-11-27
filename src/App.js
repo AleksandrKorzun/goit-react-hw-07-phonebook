@@ -1,7 +1,6 @@
 
 import './App.css';
-import React, { useEffect } from 'react'
-// import { v4 as uuidv4 } from 'uuid';
+import React from 'react'
 import Phonebook from './components/Phonebook/Phonebook';
 import Filter from './components/Filter/Filter';
 import Contacts from './components/Contacts/Contacts';

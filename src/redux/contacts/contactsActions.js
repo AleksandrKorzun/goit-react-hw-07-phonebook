@@ -1,4 +1,4 @@
-import { createAction, nanoid } from "@reduxjs/toolkit";
+import { createAction} from "@reduxjs/toolkit";
 
 export const addItemsActionCreatorRequest = createAction("items/addItemsRequest");
 export const addItemsActionCreatorSuccess = createAction("items/addItemsSuccess");

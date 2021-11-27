@@ -1,7 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { addItemsActionCreatorError, addItemsActionCreatorRequest, addItemsActionCreatorSuccess, deleteItemActionCreatorError, deleteItemActionCreatorRequest, deleteItemActionCreatorSuccess, getItemsActionCreatorError, getItemsActionCreatorRequest, getItemsActionCreatorSuccess, setFilterActionCreator } from "./contactsActions";
-// import { addItemsActionCreator, deleteItemActionCreator, getItemsActionCreator, setFilterActionCreator} from "./contactsActions";
 
 const itemsReducer = createReducer([], {
     [addItemsActionCreatorSuccess]: (state, action) => [...state, action.payload],
